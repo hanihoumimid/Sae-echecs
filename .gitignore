@@ -1,0 +1,47 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de développement
+*.log
+*.tmp
+*.temp
+
+# Dossiers de build
+node_modules/
+dist/
+build/
+.gradle/
+target/
+
+# Fichiers de configuration IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers Docker
+.dockerignore
+
+# Fichiers de cache
+.cache/
+.parcel-cache/
+
+# Fichiers de test
+coverage/
+.nyc_output/
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de logs
+logs/
+*.log
+
+# Fichiers temporaires
+tmp/
+temp/ 
