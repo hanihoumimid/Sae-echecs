@@ -1,0 +1,34 @@
+# Version supprimée car obsolète dans les versions récentes de Docker Compose
+
+services:
+  # Service backend (Spring Boot)
+  backend:
+    build:
+      context: ./Chess
+      dockerfile: Dockerfile
+    container_name: chess-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - chess-network
+    restart: unless-stopped
+
+  # Service frontend (Vue.js)
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: chess-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - chess-network
+    restart: unless-stopped
+
+networks:
+  chess-network:
+    driver: bridge 
